@@ -1,0 +1,28 @@
+---
+interface SideContainerItem {
+  reference: string;
+  name: string;
+  icon: string;
+  value: string;
+}
+
+const {
+  content
+} = Astro.props;
+---
+
+<a href={content.reference}
+   class="flex justify-between items-center p-2 group cursor-pointer hover:bg-neutral-200 hover:dark:bg-neutral-700 transition-colors duration-200 rounded-lg"
+   target="_blank">
+  <div class="flex items-center">
+    <div class="mr-2 p-2 rounded-full bg-neutral-200 dark:bg-neutral-700 text-neutral-700 dark:text-neutral-200 group-hover:bg-neutral-300 dark:group-hover:bg-neutral-600 transition-colors duration-200">
+      <img src={`/icons/${content.icon}.svg`} alt={content.name}>
+    </div>
+    <span class="text-sm font-medium text-neutral-700 dark:text-neutral-200">
+        {content.name}
+      </span>
+  </div>
+  <span class="text-sm text-neutral-500 dark:text-neutral-400">
+    {content.value}
+  </span>
+</a>

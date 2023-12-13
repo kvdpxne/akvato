@@ -1,16 +1,31 @@
 ---
+import BaseHead from "../components/BaseHead.astro";
+import Footer from "../components/Footer.astro";
+import SideContainer from "../components/SideContainer.astro";
 
+const socialsAndContact = [{
+  reference: "https://github.com/kvdpxne",
+  name: "GitHub",
+  icon: "social_github",
+  value: "kvdpxne"
+}, {
+  name: "Discord",
+  icon: "contact_discord",
+  value: "kvdpxne"
+}];
 ---
 
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
+<!--suppress HtmlRequiredTitleElement -->
+<head>
+  <BaseHead/>
+</head>
+<body>
+<main>
+  <section>
+    <SideContainer title="Skills" items={socialsAndContact}/>
+  </section>
+</main>
+<Footer/>
+</body>
 </html>
