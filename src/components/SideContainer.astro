@@ -6,13 +6,14 @@ const {
 } = Astro.props;
 ---
 
-<div class="border border-neutral-100 dark:border-neutral-700/40 rounded-2x1">
+<div class="border border-neutral-700/40 rounded-2xl">
   <div class="p-5">
-    <h2 class="">
+    <h2 class="font-bold">
       {title}
     </h2>
     <div class="mt-6 space-y-2">
-      {items.map(it => <SideContainerItem content={it}/>)}
+      {items.sort((a, b) => b.value - a.value).map(it =>
+        <SideContainerItem content={it}/>)}
     </div>
   </div>
 </div>

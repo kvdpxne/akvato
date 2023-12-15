@@ -1,12 +1,17 @@
-<footer class="flex flex-col justify-center">
-  <div class="text-center dark:text-slate-200">
+---
+import Link from "./Link.astro";
+---
+
+<footer class="flex justify-center">
+  <div class="text-center">
     <p>
       Built with <span class="text-red-600">❤</span>
-      using <a href="https://astro.build/" target="_blank">{Astro.generator}</a>
-      by kvdpxne.
+      using <Link href="https://astro.build/">{Astro.generator}</Link>
+      by kvdpxne
     </p>
     <p>
-      Icons by <a href="https://icons8.com" target="_blank">Icons8</a>.
+      Icons by
+      <Link href="https://icons8.com">Icons8</Link>
     </p>
   </div>
 </footer>

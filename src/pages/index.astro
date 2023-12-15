@@ -1,7 +1,7 @@
 ---
-import BaseHead from "../components/BaseHead.astro";
-import Footer from "../components/Footer.astro";
+import Layout from "../layouts/Layout.astro";
 import SideContainer from "../components/SideContainer.astro";
+import Link from "../components/Link.astro";
 
 const socialsAndContact = [{
   reference: "https://github.com/kvdpxne",
@@ -9,23 +9,113 @@ const socialsAndContact = [{
   icon: "social_github",
   value: "kvdpxne"
 }, {
-  name: "Discord",
-  icon: "contact_discord",
+  reference: "https://twitter.com/kvdpxne",
+  name: "X (formerly Twitter)",
+  icon: "social_twitter",
   value: "kvdpxne"
+}, {
+  reference: "mailto:kvdpxne@gmail.com",
+  name: "Email",
+  icon: "contact_email",
+  value: "kvdpxne@gmail.com"
+}];
+
+const skills = [{
+  name: "Angular",
+  icon: "framework_angular",
+  value: 12
+}, {
+  name: "Astro",
+  icon: "framework_astro",
+  value: 0
+}, {
+  name: "React",
+  icon: "framework_react",
+  value: 3
+}, {
+  name: "Spring",
+  icon: "framework_spring_boot",
+  value: 14
+}, {
+  name: "Svelte",
+  icon: "framework_svelte",
+  value: 2
+}, {
+  name: "C",
+  icon: "language_c",
+  value: 2
+}, {
+  name: "C++",
+  icon: "language_cpp",
+  value: 1
+}, {
+  name: "Java",
+  icon: "language_java",
+  value: 61
+}, {
+  name: "JavaScript",
+  icon: "language_javascript",
+  value: 13
+}, {
+  name: "Kotlin",
+  icon: "language_kotlin",
+  value: 17
+}, {
+  name: "Rust",
+  icon: "language_rust",
+  value: 1
+}, {
+  name: "TypeScript",
+  icon: "language_typescript",
+  value: 12
 }];
 ---
 
-<html lang="en">
-<!--suppress HtmlRequiredTitleElement -->
-<head>
-  <BaseHead/>
-</head>
-<body>
-<main>
-  <section>
-    <SideContainer title="Skills" items={socialsAndContact}/>
-  </section>
-</main>
-<Footer/>
-</body>
-</html>
+<Layout>
+  <div class="flex justify-center">
+    <div class="container">
+
+      <div class="p-2 pb-10 w-full lg:w-2/3">
+        <div class="pb-4">
+          <h2 class="text-4xl md:text-6xl font-bold">
+            Cześć, jestem kvdpxne
+          </h2>
+        </div>
+
+        <p class="text-base md:text-xl">
+          Nazywam się Łukasz Pietrzak, jestem pasjonatem programowania
+          specjalizującym się w tworzeniu stron internetowych. W wolnym czasie
+          lubię także tworzyć oprogramowanie open-source do różnych celów,
+          które możesz znaleźć w zakładce
+          <Link href="https://github.com/kvdpxne?tab=repositories">
+            repozytoria
+          </Link>
+          na moim profilu
+          <Link href="https://github.com/kvdpxne">Github</Link>.
+        </p>
+      </div>
+
+      <div class="grid gap-4 w-full grid-cols-1 lg:grid-cols-2">
+        <div>
+          <SideContainer title="Socials & Contact" items={socialsAndContact}/>
+          <div class="p-2 pb-4 md:pb-0">
+            <span class="font-bold">
+              Proszę unikać korzystania z tych opcji kontaktu w celu
+              uzyskania pomocy technicznej.
+            </span>
+            <p>
+              Najlepiej nadaje się do tego narzędzie do śledzenia problemów
+              odpowiednie dla oprogramowania, z którym potrzebujesz pomocy.
+              Z góry dziękuję!
+            </p>
+          </div>
+        </div>
+        <div>
+          <SideContainer title="Skills" items={skills}/>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+</Layout>
