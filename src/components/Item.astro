@@ -1,16 +1,15 @@
 ---
 import FormattedDate from "./FormattedDate.astro";
-const {
-  content
-} = Astro.props;
+const {content} = Astro.props;
 ---
 
-<a href={content.reference}
-   class="flex justify-between items-center p-2 group cursor-pointer hover:bg-neutral-200 hover:dark:bg-neutral-700 rounded-lg"
-   target="_blank">
+<a class="flex justify-between group items-center p-2 rounded-lg hover:bg-neutral-200 hover:dark:bg-neutral-700"
+   href={content.reference}
+   target={content.reference?.startsWith("mailto:") ? "_self" : "_blank"}>
 
   <div class="flex items-center">
-    <div class="mr-2 p-2 rounded-full bg-neutral-200 dark:bg-neutral-700 text-neutral-700 dark:text-neutral-200 group-hover:bg-neutral-300 dark:group-hover:bg-neutral-600">
+    <div
+      class="mr-2 p-2 rounded-full bg-neutral-200 dark:bg-neutral-700 text-neutral-700 dark:text-neutral-200 group-hover:bg-neutral-300 dark:group-hover:bg-neutral-600">
       <img class="h-8 w-8"
            src={`/_icons/${content.icon}.svg`}
            alt={content.name}>

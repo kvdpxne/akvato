@@ -1,25 +1,13 @@
 ---
-const {href, target = "_blank"} = Astro.props;
+const {href} = Astro.props;
 ---
 
-<a class="hover:border-b-white dark:hover:border-b-neutral-800"
-   href={href}
-   target={target}>
-  <slot/>
+<a class="border-b
+          border-dashed hover:border-solid
+          border-neutral-700 dark:border-neutral-200
+          active:border-blue-700 dark:active:border-red-600
+          active:text-blue-700 dark:active:text-red-600"
+	 href={href}
+	 target="_blank">
+	<slot/>
 </a>
-
-<style>
-  a {
-    text-decoration: none;
-    border-bottom: 1px dashed;
-  }
-
-  a:hover {
-    border-bottom: 1px solid;
-  }
-
-  a:active {
-    color: deepskyblue;
-    border-bottom: 1px deepskyblue solid;
-  }
-</style>
