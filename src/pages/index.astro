@@ -1,8 +1,8 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import SideContainer from "../components/ContainerNamed.astro";
-import Link from "../components/Link.astro";
 import ContainerRepositoryItem from "../components/ItemRepository.astro";
+import Hero from "../components/Hero.astro";
 
 const socialsAndContact = [{
   reference: "https://github.com/kvdpxne",
@@ -35,25 +35,12 @@ const skills = [{
   reference: "https://react.dev",
   name: "React",
   icon: "framework_react",
-  value: 3
+  value: 13
 }, {
   reference: "https://spring.io",
   name: "Spring",
   icon: "framework_spring_boot",
   value: 14
-}, {
-  reference: "https://svelte.dev",
-  name: "Svelte",
-  icon: "framework_svelte",
-  value: 2
-}, {
-  name: "C",
-  icon: "language_c",
-  value: 2
-}, {
-  name: "C++",
-  icon: "language_cpp",
-  value: 1
 }, {
   name: "Java",
   icon: "language_java",
@@ -66,10 +53,6 @@ const skills = [{
   name: "Kotlin",
   icon: "language_kotlin",
   value: 17
-}, {
-  name: "Rust",
-  icon: "language_rust",
-  value: 1
 }, {
   name: "TypeScript",
   icon: "language_typescript",
@@ -86,50 +69,48 @@ const fs = "Repozytorium zawiera open-source kod strony portfolio, na której ob
     <div class="container">
 
       <!-- Header -->
-      <header class="p-2 pb-10 w-full lg:w-2/3">
-        <div class="pb-4">
-          <h2 class="text-4xl md:text-6xl font-bold">
-            Cześć, jestem kvdpxne
-          </h2>
-        </div>
+      <div class="w-full h-screen flex items-center">
+        <Hero/>
+      </div>
 
-        <p class="text-base md:text-xl">
-          Nazywam się Łukasz Pietrzak, jestem pasjonatem programowania
-          specjalizującym się w tworzeniu stron internetowych. W wolnym czasie
-          lubię także tworzyć oprogramowanie open-source do różnych celów,
-          które możesz znaleźć w zakładce
-          <Link href="https://github.com/kvdpxne?tab=repositories">
-            repozytoria
-          </Link>
-          na moim profilu
-          <Link href="https://github.com/kvdpxne">
-            Github
-          </Link>
-          .
-        </p>
-      </header>
+			<div class="grid grid-cols-1 lg:grid-cols-2 gap-24">
+				<div>
+					<SideContainer title="Skills" items={skills}/>
+				</div>
 
-      <div class="grid gap-24 w-full grid-cols-1 lg:grid-cols-2">
-        <div class="space-y-5">
-          <SideContainer title="Socials & Contact" items={socialsAndContact}/>
-          <div class="ps-2 pe-2">
+				<div class="space-y-4">
+					<SideContainer title="Socials & Contact" items={socialsAndContact}/>
+					<div class="ps-2 pe-2">
             <span class="font-bold">
               Proszę unikać korzystania z tych opcji kontaktu w celu
               uzyskania pomocy technicznej.
             </span>
-            <p>
-              Najlepiej nadaje się do tego narzędzie do śledzenia problemów
-              odpowiednie dla oprogramowania, z którym potrzebujesz pomocy.
-              Z góry dziękuję!
-            </p>
-          </div>
-          <ContainerRepositoryItem name="kvdpxne/akvato"
-                                   description={fs}
-                                   language="Astro"
-                                   color="#ff5a03"/>
+						<p>
+							Najlepiej nadaje się do tego narzędzie do śledzenia problemów
+							odpowiednie dla oprogramowania, z którym potrzebujesz pomocy.
+							Z góry dziękuję!
+						</p>
+					</div>
+				</div>
+			</div>
+
+      <h2>Some Projects</h2>
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-24">
+        <div class="space-y-4">
+					<ContainerRepositoryItem name="kvdpxne/covilo"
+																	 description={fs}
+																	 language="Java"
+																	 color="#ff5a03"/>
+					<ContainerRepositoryItem name="kvdpxne/destroy-the-monument"
+																	 description={fs}
+																	 language="Kotlin"
+																	 color="#ff5a03"/>
         </div>
-        <div>
-          <SideContainer title="Skills" items={skills}/>
+        <div class="space-y-4">
+					<ContainerRepositoryItem name="kvdpxne/akvato"
+																	 description={fs}
+																	 language="Astro"
+																	 color="#ff5a03"/>
         </div>
       </div>
 

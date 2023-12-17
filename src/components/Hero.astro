@@ -1,0 +1,39 @@
+---
+import HeroEditor from "./HeroEditor.astro";
+import Link from "./Link.astro";
+---
+
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-0 lg:gap-16">
+	<div class="text-neutral-800 dark:text-neutral-100">
+		<p class="text-xl text-blue-700 dark:text-red-600 font-semibold">
+			Cześć, jestem kvdpxne
+		</p>
+		<h1 class="text-6xl font-black">
+			Fullstack developer from Poland
+		</h1>
+		<p class="text-lg font-medium pt-4">
+			Nazywam się Łukasz Pietrzak, jestem pasjonatem programowania
+			specjalizującym się w tworzeniu stron internetowych. W wolnym czasie
+			lubię także tworzyć oprogramowanie open-source do różnych celów,
+			które możesz znaleźć w zakładce
+			<Link href="https://github.com/kvdpxne?tab=repositories">
+				repozytoria
+			</Link>
+			na moim profilu
+			<Link href="https://github.com/kvdpxne">
+				Github
+			</Link>
+			.
+		</p>
+	</div>
+
+	<!-- Right side of Hero -->
+	<div class="hidden lg:block
+							rounded-l-2xl rounded-tr-2xl
+							bg-blue-700 dark:bg-red-600">
+		<div class="ms-12 mt-12">
+			<HeroEditor/>
+		</div>
+	</div>
+
+</div>
