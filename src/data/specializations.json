@@ -1,0 +1,46 @@
+[
+	{
+		"reference": "https://angular.io",
+		"name": "Angular",
+		"icon": "framework_angular",
+		"value": 12
+	},
+	{
+		"reference": "https://astro.build",
+		"name": "Astro",
+		"icon": "framework_astro",
+		"value": 0
+	},
+	{
+		"reference": "https://react.dev",
+		"name": "React",
+		"icon": "framework_react",
+		"value": 13
+	},
+	{
+		"reference": "https://spring.io",
+		"name": "Spring",
+		"icon": "framework_spring_boot",
+		"value": 14
+	},
+	{
+		"name": "Java",
+		"icon": "language_java",
+		"value": 63
+	},
+	{
+		"name": "JavaScript",
+		"icon": "language_javascript",
+		"value": 13
+	},
+	{
+		"name": "Kotlin",
+		"icon": "language_kotlin",
+		"value": 17
+	},
+	{
+		"name": "TypeScript",
+		"icon": "language_typescript",
+		"value": 13
+	}
+]

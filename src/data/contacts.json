@@ -1,0 +1,20 @@
+[
+	{
+		"reference": "https://github.com/kvdpxne",
+		"name": "GitHub",
+		"icon": "social_github",
+		"value": "kvdpxne"
+	},
+	{
+		"reference": "https://twitter.com/kvdpxne",
+		"name": "X (formerly Twitter)",
+		"icon": "social_twitter",
+		"value": "kvdpxne"
+	},
+	{
+		"reference": "mailto:kvdpxne@gmail.com",
+		"name": "Email",
+		"icon": "contact_email",
+		"value": "kvdpxne@gmail.com"
+	}
+]

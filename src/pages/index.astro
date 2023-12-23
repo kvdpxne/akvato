@@ -1,120 +1,79 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import SideContainer from "../components/ContainerNamed.astro";
-import ContainerRepositoryItem from "../components/ItemRepository.astro";
+import Container from "../components/ContainerNamed.astro";
+import Repository from "../components/Repository.astro";
 import Hero from "../components/Hero.astro";
 
-const socialsAndContact = [{
-  reference: "https://github.com/kvdpxne",
-  name: "GitHub",
-  icon: "social_github",
-  value: "kvdpxne"
-}, {
-  reference: "https://twitter.com/kvdpxne",
-  name: "X (formerly Twitter)",
-  icon: "social_twitter",
-  value: "kvdpxne"
-}, {
-  reference: "mailto:kvdpxne@gmail.com",
-  name: "Email",
-  icon: "contact_email",
-  value: "kvdpxne@gmail.com"
-}];
+import Grid from "../components/Grid.astro";
 
-const skills = [{
-  reference: "https://angular.io",
-  name: "Angular",
-  icon: "framework_angular",
-  value: 12
-}, {
-  reference: "https://astro.build",
-  name: "Astro",
-  icon: "framework_astro",
-  value: 0
-}, {
-  reference: "https://react.dev",
-  name: "React",
-  icon: "framework_react",
-  value: 13
-}, {
-  reference: "https://spring.io",
-  name: "Spring",
-  icon: "framework_spring_boot",
-  value: 14
-}, {
-  name: "Java",
-  icon: "language_java",
-  value: 61
-}, {
-  name: "JavaScript",
-  icon: "language_javascript",
-  value: 13
-}, {
-  name: "Kotlin",
-  icon: "language_kotlin",
-  value: 17
-}, {
-  name: "TypeScript",
-  icon: "language_typescript",
-  value: 12
-}];
-
-const fs = "Repozytorium zawiera open-source kod strony portfolio, na której obecnie jesteś z " +
-  "informacjami o autorze. Pełne środowisko do prezentacji umiejętności, " +
-  "projektów i kontaktu."
+import contacts from "../data/contacts.json";
+import specializations from "../data/specializations.json";
+import Title from "../components/Title.astro";
 ---
 
 <Layout>
-  <div class="flex justify-center">
-    <div class="container">
+	<div class="flex justify-center">
+		<div class="container space-y-5">
 
-      <!-- Header -->
-      <div class="w-full h-screen flex items-center">
-        <Hero/>
-      </div>
+			<!-- Header -->
+			<div class="flex items-center pt-16 pb-32">
+				<Hero/>
+			</div>
 
-			<div class="grid grid-cols-1 lg:grid-cols-2 gap-24">
-				<div>
-					<SideContainer title="Skills" items={skills}/>
+			<Title>
+				A few information
+			</Title>
+
+			<Grid>
+				<div class="order-last lg:order-first">
+					<Container title="Specializations" items={specializations}/>
 				</div>
-
-				<div class="space-y-4">
-					<SideContainer title="Socials & Contact" items={socialsAndContact}/>
+				<div class="space-y-3.5">
+					<Container title="Socials & Contact" items={contacts}/>
 					<div class="ps-2 pe-2">
-            <span class="font-bold">
-              Proszę unikać korzystania z tych opcji kontaktu w celu
-              uzyskania pomocy technicznej.
-            </span>
+						<p class="font-bold">
+							Please avoid using these contact options for technical support.
+						</p>
 						<p>
-							Najlepiej nadaje się do tego narzędzie do śledzenia problemów
-							odpowiednie dla oprogramowania, z którym potrzebujesz pomocy.
-							Z góry dziękuję!
+							The appropriate issue tracker for the software you need help
+							with is best suited for it. Thank you in advance!
 						</p>
 					</div>
 				</div>
-			</div>
+			</Grid>
 
-      <h2>Some Projects</h2>
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-24">
-        <div class="space-y-4">
-					<ContainerRepositoryItem name="kvdpxne/covilo"
-																	 description={fs}
-																	 language="Java"
-																	 color="#ff5a03"/>
-					<ContainerRepositoryItem name="kvdpxne/destroy-the-monument"
-																	 description={fs}
-																	 language="Kotlin"
-																	 color="#ff5a03"/>
-        </div>
-        <div class="space-y-4">
-					<ContainerRepositoryItem name="kvdpxne/akvato"
-																	 description={fs}
-																	 language="Astro"
-																	 color="#ff5a03"/>
-        </div>
-      </div>
+			<Title id="projects">
+				A few projects
+			</Title>
 
+			<Grid>
+				<div class="order-first lg:order-last">
+					<Repository name="kvdpxne/akvato"
+											languages={[{name: "Astro", color: "#ff5a03"}]}>
+						Repozytorium zawiera open-source kod strony portfolio, na której
+						obecnie jesteś z informacjami o autorze. Pełne środowisko do
+						prezentacji umiejętności, projektów i kontaktu.
+					</Repository>
+				</div>
+				<div class="space-y-4">
+					<Repository name="kvdpxne/covilo"
+											languages={[
+												{name: "Java", color: "#b07219"},
+												{name: "TypeScript", color: "#3178c6"}]}>
+						Repozytorium to open-source kod aplikacji internetowej do
+						zgłaszania przestępstw. Zapewnia bezpieczne środowisko dla
+						użytkowników do raportowania incydentów oraz wspiera współpracę
+						z organami ścigania.
+					</Repository>
+					<Repository name="kvdpxne/destroy-the-monument"
+											languages={[{name: "Kotlin", color: "#a97bff"}]}>
+						Repozytorium pluginu mini-gry do Minecrafta. Rywalizacja dwóch
+						drużyn, celem zniszczenie monumentu przeciwnika. Otwarty kod
+						źródłowy dla dynamicznych rozgrywek w świecie Minecraft.
+					</Repository>
+				</div>
+			</Grid>
 
-    </div>
-  </div>
+		</div>
+	</div>
 </Layout>

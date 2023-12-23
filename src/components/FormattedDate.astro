@@ -2,32 +2,32 @@
 const {value} = Astro.props;
 
 const convert = () => {
-  if ("string" === typeof value) {
-    return value;
-  }
+	if ("string" === typeof value) {
+		return value;
+	}
 
-  if (0 >= value) {
-    return "Just now 👀";
-  }
+	if (0 >= value) {
+		return "Just now 👀";
+	}
 
-  const years = Math.floor(value / 12);
-  const leftMonths = value % 12;
+	const years = Math.floor(value / 12);
+	const leftMonths = value % 12;
 
-  let result = "";
+	let result = "";
 
-  if (0 < years) {
-    result += 1 === years ? "1 year" : `${years} years`;
-  }
+	if (0 < years) {
+		result += 1 === years ? "1 year" : `${years} years`;
+	}
 
-  if (0 < years && 0 < leftMonths) {
-    result += " ";
-  }
+	if (0 < years && 0 < leftMonths) {
+		result += " ";
+	}
 
-  if (0 < leftMonths) {
-    result += 1 === leftMonths ? "1 month" : `${leftMonths} months`;
-  }
+	if (0 < leftMonths) {
+		result += 1 === leftMonths ? "1 month" : `${leftMonths} months`;
+	}
 
-  return result;
+	return result;
 };
 ---
 

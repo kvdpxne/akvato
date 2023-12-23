@@ -1,0 +1,26 @@
+[
+	{
+		"name": "kvdpxne/akvato",
+		"language": "Astro",
+		"color": "#ff5a03",
+		"description": {
+			"pl": ""
+		}
+	},
+	{
+		"name": "kvdpxne/covilo",
+		"language": "Java",
+		"color": "#b07219",
+		"description": {
+			"pl": ""
+		}
+	},
+	{
+		"name": "kvdpxne/destroy-the-monument",
+		"language": "Kotlin",
+		"color": "#a97bff",
+		"description": {
+			"pl": ""
+		}
+	}
+]

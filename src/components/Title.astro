@@ -1,0 +1,14 @@
+---
+const {id} = Astro.props;
+---
+
+<div class="flex items-center
+						text-3xl font-bold
+						text-neutral-800 dark:text-neutral-100"
+		 id={id}>
+	<span class="font-mono text-4xl pe-1.5
+							 text-blue-700 dark:text-red-600">
+		&#35;
+	</span>
+	<slot/>
+</div>
