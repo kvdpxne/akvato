@@ -1,0 +1,12 @@
+{
+	"site": {
+		"description": ""
+	},
+	"home": {
+		"few_information": "A few Information",
+		"specializations": "Specializations",
+		"socials_and_contact": "Socials & Contact",
+		"contact_information": "<0>Please avoid using these contact options for technical support.</0>The appropriate issue tracker for the software you need help with is best suited for it. Thank you in advance!",
+		"few_projects": "A few Projects"
+	}
+}

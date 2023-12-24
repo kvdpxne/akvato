@@ -1,4 +1,5 @@
 import {defineConfig} from "astro/config";
+import astroI18next from "astro-i18next";
 import tailwind from "@astrojs/tailwind";
 
 // https://astro.build/config
@@ -7,15 +8,7 @@ export default defineConfig({
 		assets: "_assets"
 	},
 	integrations: [
+		astroI18next(),
 		tailwind()
-	],
-	i18n: {
-		defaultLocale: "en",
-		locales: [
-			"en", "pl"
-		],
-		routing: {
-			prefixDefaultLocale: true
-		}
-	}
+	]
 });

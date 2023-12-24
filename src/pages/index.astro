@@ -9,6 +9,10 @@ import Grid from "../components/Grid.astro";
 import contacts from "../data/contacts.json";
 import specializations from "../data/specializations.json";
 import Title from "../components/Title.astro";
+
+import i18next, { t } from "i18next";
+import {Trans, HeadHrefLangs} from "astro-i18next/components";
+import {SITE_NAME} from "../constants";
 ---
 
 <Layout>
@@ -21,34 +25,36 @@ import Title from "../components/Title.astro";
 			</div>
 
 			<Title>
-				A few information
+				{t("home.few_information")}
 			</Title>
 
 			<Grid>
 				<div class="order-last lg:order-first">
-					<Container title="Specializations" items={specializations}/>
+					<Container title={t("home.specializations")}
+										 items={specializations}/>
 				</div>
 				<div class="space-y-3.5">
-					<Container title="Socials & Contact" items={contacts}/>
+					<Container title={t("home.socials_and_contact")}
+										 items={contacts}/>
 					<div class="ps-2 pe-2">
-						<p class="font-bold">
-							Please avoid using these contact options for technical support.
-						</p>
-						<p>
+						<Trans i18nKey="home.contact_information">
+							<p class="font-bold">
+								Please avoid using these contact options for technical support.
+							</p>
 							The appropriate issue tracker for the software you need help
 							with is best suited for it. Thank you in advance!
-						</p>
+						</Trans>
 					</div>
 				</div>
 			</Grid>
 
 			<Title id="projects">
-				A few projects
+				{t("home.few_projects")}
 			</Title>
 
 			<Grid>
 				<div class="order-first lg:order-last">
-					<Repository name="kvdpxne/akvato"
+					<Repository name={`kvdpxne/${SITE_NAME}`}
 											languages={[{name: "Astro", color: "#ff5a03"}]}>
 						Repozytorium zawiera open-source kod strony portfolio, na której
 						obecnie jesteś z informacjami o autorze. Pełne środowisko do
