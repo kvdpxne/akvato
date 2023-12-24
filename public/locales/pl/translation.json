@@ -1,0 +1,22 @@
+{
+	"site": {
+		"description": ""
+	},
+	"home": {
+		"hero": {
+			"welcome": "Cześć, jestem kvdpxne",
+			"who": "Fullstack developer from Poland",
+			"description": "Nazywam się Łukasz Pietrzak, jestem pasjonatem programowania specjalizującym się w tworzeniu serwisów internetowych. W wolnym czasie lubię także tworzyć oprogramowanie open-source o różnym przeznaczeniu, które możesz znaleźć w zakładce <0>repozytoria</0> na moim profilu <1>GitHub</1>."
+		},
+		"few_information": "Kilka informacji",
+		"specializations": "Specjalizacje",
+		"socials_and_contact": "Sociale & Kontakt",
+		"contact_information": "<0>Proszę unikać korzystania z tych opcji kontaktu w celu uzyskania pomocy technicznej.</0>Najlepiej nadaje się do tego narzędzie do śledzenia problemów odpowiednie dla oprogramowania, z którym potrzebujesz pomocy. Z góry dziękuję!",
+		"few_projects": "Kilka projektów",
+		"repositories": {
+			"site": "Repozytorium zawiera open-source kod strony portfolio, na której obecnie jesteś z informacjami o autorze. Pełne środowisko do prezentacji umiejętności, projektów i kontaktu.",
+			"covilo": "Repozytorium to open-source kod aplikacji internetowej do zgłaszania przestępstw. Zapewnia bezpieczne środowisko dla użytkowników do raportowania incydentów oraz wspiera współpracę z organami ścigania.",
+			"destroy_the_monument": "Repozytorium pluginu mini-gry do Minecrafta. Rywalizacja dwóch drużyn, celem zniszczenie monumentu przeciwnika. Otwarty kod źródłowy dla dynamicznych rozgrywek w świecie Minecraft."
+		}
+	}
+}

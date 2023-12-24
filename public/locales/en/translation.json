@@ -1,0 +1,22 @@
+{
+	"site": {
+		"description": ""
+	},
+	"home": {
+		"hero": {
+			"welcome": "Hi, I'm kvdpxne.",
+			"who": "Fullstack developer from Poland",
+			"description": "My name is Łukasz Pietrzak, I am a programming enthusiast specializing in creating web services. In my free time, I also like to create open-source software for various purposes, which you can find in the <0>repositories</0> tab on my <1>GitHub</1> profile."
+		},
+		"few_information": "A few Information",
+		"specializations": "Specializations",
+		"socials_and_contact": "Socials & Contact",
+		"contact_information": "<0>Please avoid using these contact options for technical support.</0>The appropriate issue tracker for the software you need help with is best suited for it. Thank you in advance!",
+		"few_projects": "A few Projects",
+		"repositories": {
+			"site": "",
+			"covilo": "",
+			"destroy_the_monument": ""
+		}
+	}
+}

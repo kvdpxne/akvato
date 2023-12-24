@@ -1,3 +1,8 @@
 <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-16">
-	<slot/>
+	<div class="order-last lg:order-first">
+		<slot name="first"/>
+	</div>
+	<div class="space-y-4">
+		<slot name="second"/>
+	</div>
 </div>

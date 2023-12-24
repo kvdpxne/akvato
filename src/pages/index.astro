@@ -3,16 +3,15 @@ import Layout from "../layouts/Layout.astro";
 import Container from "../components/ContainerNamed.astro";
 import Repository from "../components/Repository.astro";
 import Hero from "../components/Hero.astro";
-
 import Grid from "../components/Grid.astro";
-
 import contacts from "../data/contacts.json";
 import specializations from "../data/specializations.json";
 import Title from "../components/Title.astro";
+import { t, changeLanguage } from "i18next";
+import { Trans } from "astro-i18next/components";
+import { SITE_NAME } from "../constants";
 
-import i18next, { t } from "i18next";
-import {Trans, HeadHrefLangs} from "astro-i18next/components";
-import {SITE_NAME} from "../constants";
+changeLanguage("en");
 ---
 
 <Layout>
@@ -29,11 +28,10 @@ import {SITE_NAME} from "../constants";
 			</Title>
 
 			<Grid>
-				<div class="order-last lg:order-first">
-					<Container title={t("home.specializations")}
-										 items={specializations}/>
-				</div>
-				<div class="space-y-3.5">
+				<Container slot="first"
+									 title={t("home.specializations")}
+									 items={specializations}/>
+				<Fragment slot="second">
 					<Container title={t("home.socials_and_contact")}
 										 items={contacts}/>
 					<div class="ps-2 pe-2">
@@ -45,7 +43,7 @@ import {SITE_NAME} from "../constants";
 							with is best suited for it. Thank you in advance!
 						</Trans>
 					</div>
-				</div>
+				</Fragment>
 			</Grid>
 
 			<Title id="projects">
@@ -53,31 +51,23 @@ import {SITE_NAME} from "../constants";
 			</Title>
 
 			<Grid>
-				<div class="order-first lg:order-last">
-					<Repository name={`kvdpxne/${SITE_NAME}`}
-											languages={[{name: "Astro", color: "#ff5a03"}]}>
-						Repozytorium zawiera open-source kod strony portfolio, na której
-						obecnie jesteś z informacjami o autorze. Pełne środowisko do
-						prezentacji umiejętności, projektów i kontaktu.
-					</Repository>
-				</div>
-				<div class="space-y-4">
+				<Fragment slot="first">
 					<Repository name="kvdpxne/covilo"
 											languages={[
 												{name: "Java", color: "#b07219"},
 												{name: "TypeScript", color: "#3178c6"}]}>
-						Repozytorium to open-source kod aplikacji internetowej do
-						zgłaszania przestępstw. Zapewnia bezpieczne środowisko dla
-						użytkowników do raportowania incydentów oraz wspiera współpracę
-						z organami ścigania.
+						{t("home.repositories.covilo")}
 					</Repository>
 					<Repository name="kvdpxne/destroy-the-monument"
 											languages={[{name: "Kotlin", color: "#a97bff"}]}>
-						Repozytorium pluginu mini-gry do Minecrafta. Rywalizacja dwóch
-						drużyn, celem zniszczenie monumentu przeciwnika. Otwarty kod
-						źródłowy dla dynamicznych rozgrywek w świecie Minecraft.
+						{t("home.repositories.destroy_the_monument")}
 					</Repository>
-				</div>
+				</Fragment>
+				<Repository slot="second"
+										name={`kvdpxne/${SITE_NAME}`}
+										languages={[{name: "Astro", color: "#ff5a03"}]}>
+					{t("home.repositories.site")}
+				</Repository>
 			</Grid>
 
 		</div>
