@@ -18,5 +18,10 @@
 			"covilo": "Repozytorium to open-source kod aplikacji internetowej do zgłaszania przestępstw. Zapewnia bezpieczne środowisko dla użytkowników do raportowania incydentów oraz wspiera współpracę z organami ścigania.",
 			"destroy_the_monument": "Repozytorium pluginu mini-gry do Minecrafta. Rywalizacja dwóch drużyn, celem zniszczenie monumentu przeciwnika. Otwarty kod źródłowy dla dynamicznych rozgrywek w świecie Minecraft."
 		}
-	}
+	},
+	"just_now": "Dopiero co \uD83D\uDC40",
+	"year": "rok",
+	"years": "lata",
+	"month": "miesiąc",
+	"months": "miesiące"
 }

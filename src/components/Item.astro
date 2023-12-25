@@ -1,6 +1,63 @@
 ---
-import FormattedDate from "./FormattedDate.astro";
+import i18next, {t} from "i18next";
 const {content} = Astro.props;
+
+/**
+ * Converts number of months to number of years and months.
+ * For example, 13 months will be 1 year and 1 month.
+ */
+const converted = () => {
+	const value = content.value;
+	if ("string" === typeof value) {
+		return value;
+	}
+	if (0 >= value) {
+		return t("just_now");
+	}
+	/* Jest to dość prymitywne podejście, ale w chwili kiedy to pisałem nie
+	 * brałem pod uwagę wspierania więcej niż 2 języków w tym projekcie;
+	 * angielskiego i swojego ojczystego, czyli polskiego.
+	 */
+	const isPolish = "pl" === i18next.language;
+	const years = Math.floor(value / 12);
+	const leftMonths = value % 12;
+	let result = "";
+	if (0 < years) {
+		result += 1 === years
+			? `1 ${t("year")}`
+			: `${years} ${t("years")}`;
+		/* 1 rok
+		 * 2 lata
+		 * 3 lata
+		 * 4 lata
+		 * 5 lat
+		 * ...
+		 */
+		if (isPolish && 4 < years) {
+			result = result.slice(0, -1);
+		}
+	}
+	if (0 < years && 0 < leftMonths) {
+		result += " ";
+	}
+	if (0 < leftMonths) {
+		result += 1 === leftMonths
+			? `1 ${t("month")}`
+			: `${leftMonths} ${t("months")}`;
+		/* 1 miesiąc
+		 * 2 miesiące
+		 * 3 miesiące
+		 * 4 miesiące
+		 * 5 miesięcy
+		 * ...
+		 */
+		if (isPolish && 4 < leftMonths) {
+			result = result.slice(0, -1);
+			result += "y";
+		}
+	}
+	return result;
+};
 ---
 
 <a class="flex items-center justify-between
@@ -9,7 +66,6 @@ const {content} = Astro.props;
           hover:bg-neutral-200 hover:dark:bg-neutral-700"
 	 href={content.reference}
 	 target={content.reference?.startsWith("mailto:") ? "_self" : "_blank"}>
-
 	<div class="flex items-center
               text-neutral-700 dark:text-neutral-200">
 		<div class="rounded-full mr-2 p-2
@@ -23,8 +79,7 @@ const {content} = Astro.props;
       {content.name}
     </span>
 	</div>
-
 	<span class="text-sm text-neutral-600 dark:text-neutral-400">
-    <FormattedDate value={content.value}/>
+    {converted()}
   </span>
 </a>

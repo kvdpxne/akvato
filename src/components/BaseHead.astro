@@ -1,27 +1,19 @@
 ---
 import {t} from "i18next";
 import {HeadHrefLangs} from "astro-i18next/components";
-
 import {SITE_TITLE as title} from "../constants";
 ---
 
-<!-- Global metadata -->
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content={Astro.generator}>
 <link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
-
-<!-- Primary Meta Tags -->
 <title>{title}</title>
 <meta name="title" content={title}/>
 <meta name="description" content={t("site.description")} }/>
-
-<!-- Twitter -->
 <meta property="twitter:card" content="summary_large_image"/>
 <meta property="twitter:url" content={Astro.url}/>
 <meta property="twitter:title" content={title}/>
 <meta property="twitter:description" content={t("site.description")}/>
 <!--<meta property="twitter:image" content={new URL(image, Astro.url)} />-->
-
-<!-- -->
 <HeadHrefLangs/>

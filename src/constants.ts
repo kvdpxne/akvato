@@ -1,9 +1,9 @@
 /**
- *
+ * Name of the website.
  */
 export const SITE_NAME = "akvato";
 
 /**
- * Basic name of the site.
+ * Displayed title of the website.
  */
 export const SITE_TITLE = `./${SITE_NAME}.html`;

@@ -18,5 +18,10 @@
 			"covilo": "The repository is open-source code for a crime reporting web application. It provides a safe environment for users to report incidents and supports cooperation with law enforcement agencies.",
 			"destroy_the_monument": "Mini-game plugin repository for Minecraft. Competition between two teams, the aim of which is to destroy the opponent's monument. Open source code for dynamic Minecraft gameplay."
 		}
-	}
+	},
+	"just_now": "Just now \uD83D\uDC40",
+	"year": "year",
+	"years": "years",
+	"month": "month",
+	"months": "months"
 }
