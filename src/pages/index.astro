@@ -1,15 +1,15 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Container from "../components/ContainerNamed.astro";
-import Repository from "../components/Repository.astro";
-import Hero from "../components/Hero.astro";
 import Grid from "../components/Grid.astro";
+import Hero from "../components/Hero.astro";
+import Repository from "../components/Repository.astro";
+import Title from "../components/Title.astro";
+import {t, changeLanguage} from "i18next";
+import {Trans} from "astro-i18next/components";
+import {SITE_NAME as name} from "../constants";
 import contacts from "../data/contacts.json";
 import specializations from "../data/specializations.json";
-import Title from "../components/Title.astro";
-import { t, changeLanguage } from "i18next";
-import { Trans } from "astro-i18next/components";
-import { SITE_NAME } from "../constants";
 
 changeLanguage("en");
 ---
@@ -17,16 +17,12 @@ changeLanguage("en");
 <Layout>
 	<div class="flex justify-center">
 		<div class="container space-y-5">
-
-			<!-- Header -->
 			<div class="flex items-center pt-16 pb-32">
 				<Hero/>
 			</div>
-
 			<Title>
 				{t("home.few_information")}
 			</Title>
-
 			<Grid>
 				<Container slot="first"
 									 title={t("home.specializations")}
@@ -45,11 +41,9 @@ changeLanguage("en");
 					</div>
 				</Fragment>
 			</Grid>
-
 			<Title id="projects">
 				{t("home.few_projects")}
 			</Title>
-
 			<Grid>
 				<Fragment slot="first">
 					<Repository name="kvdpxne/covilo"
@@ -64,12 +58,11 @@ changeLanguage("en");
 					</Repository>
 				</Fragment>
 				<Repository slot="second"
-										name={`kvdpxne/${SITE_NAME}`}
+										name={`kvdpxne/${name}`}
 										languages={[{name: "Astro", color: "#ff5a03"}]}>
 					{t("home.repositories.site")}
 				</Repository>
 			</Grid>
-
 		</div>
 	</div>
 </Layout>

@@ -14,9 +14,9 @@
 		"contact_information": "<0>Please avoid using these contact options for technical support.</0>The appropriate issue tracker for the software you need help with is best suited for it. Thank you in advance!",
 		"few_projects": "A few Projects",
 		"repositories": {
-			"site": "",
-			"covilo": "",
-			"destroy_the_monument": ""
+			"site": "The repository contains open-source code for the portfolio page you are currently on with author information. A complete environment to showcase your skills, projects and contact.",
+			"covilo": "The repository is open-source code for a crime reporting web application. It provides a safe environment for users to report incidents and supports cooperation with law enforcement agencies.",
+			"destroy_the_monument": "Mini-game plugin repository for Minecraft. Competition between two teams, the aim of which is to destroy the opponent's monument. Open source code for dynamic Minecraft gameplay."
 		}
 	}
 }
