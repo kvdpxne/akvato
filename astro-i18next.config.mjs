@@ -5,4 +5,5 @@ export default {
 		"en",
 		"pl"
 	],
+	resourcesBasePath: "/_languages"
 };

@@ -5,9 +5,9 @@ import Grid from "../components/Grid.astro";
 import Hero from "../components/Hero.astro";
 import Repository from "../components/Repository.astro";
 import Title from "../components/Title.astro";
-import {t, changeLanguage} from "i18next";
-import {Trans} from "astro-i18next/components";
-import {SITE_NAME as name} from "../constants";
+import { t, changeLanguage } from "i18next";
+import { Trans } from "astro-i18next/components";
+import { SITE_NAME as name } from "../constants";
 import contacts from "../data/contacts.json";
 import specializations from "../data/specializations.json";
 
@@ -28,10 +28,10 @@ changeLanguage("en");
 									 title={t("home.specializations")}
 									 items={specializations}/>
 				<Fragment slot="second">
-					<Container title={t("home.socials_and_contact")}
+					<Container title={t("home.contacts")}
 										 items={contacts}/>
 					<div class="ps-2 pe-2">
-						<Trans i18nKey="home.contact_information">
+						<Trans i18nKey="home.contacts_information">
 							<p class="font-bold">
 								Please avoid using these contact options for technical support.
 							</p>
