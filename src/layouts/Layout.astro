@@ -10,7 +10,7 @@ import i18next from "i18next";
 		<BaseHead/>
 		<script is:inline>
 			const language = navigator.language;
-			if (!location.href.includes("pl") && "pl" === language) {
+			if (!location.href.includes("/pl/") && "pl" === language) {
 				location.href = `${location.href}pl`
 			}
 			if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
