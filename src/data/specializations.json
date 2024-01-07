@@ -24,6 +24,12 @@
     "value": 14
   },
   {
+    "reference": "https://svelte.dev",
+    "name": "Svelte",
+    "icon": "framework_svelte",
+    "value": 12
+  },
+  {
     "name": "Java",
     "icon": "language_java",
     "value": 63

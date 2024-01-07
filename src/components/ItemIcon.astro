@@ -1,0 +1,11 @@
+---
+const {icon, alt} = Astro.props;
+---
+
+<div class="rounded-full mr-2.5 p-3
+            bg-neutral-200 dark:bg-neutral-700
+            group-hover:bg-neutral-300 dark:group-hover:bg-neutral-600">
+  <img class="h-6 w-6"
+       src={`/_icons/${icon}.svg`}
+       alt={alt}>
+</div>

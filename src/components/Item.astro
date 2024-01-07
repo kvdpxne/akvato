@@ -1,5 +1,6 @@
 ---
 import i18next, {t} from "i18next";
+import ItemIcon from "./ItemIcon.astro";
 const {content} = Astro.props;
 
 /**
@@ -68,13 +69,7 @@ const converted = () => {
    target={content.reference?.startsWith("mailto:") ? "_self" : "_blank"}>
   <div class="flex items-center
               text-neutral-700 dark:text-neutral-200">
-    <div class="rounded-full mr-2 p-2
-                bg-neutral-200 dark:bg-neutral-700
-                group-hover:bg-neutral-300 dark:group-hover:bg-neutral-600">
-      <img class="h-8 w-8"
-           src={`/_icons/${content.icon}.svg`}
-           alt={content.name}>
-    </div>
+    <ItemIcon icon={content.icon} alt={content.name}/>
     <span class="text-sm font-medium">
       {content.name}
     </span>
