@@ -30,21 +30,25 @@
     "value": 12
   },
   {
+    "reference": "https://www.java.com",
     "name": "Java",
     "icon": "language_java",
     "value": 63
   },
   {
+    "reference": "https://www.javascript.com",
     "name": "JavaScript",
     "icon": "language_javascript",
     "value": 13
   },
   {
+    "reference": "https://kotlinlang.org",
     "name": "Kotlin",
     "icon": "language_kotlin",
     "value": 17
   },
   {
+    "reference": "https://www.typescriptlang.org",
     "name": "TypeScript",
     "icon": "language_typescript",
     "value": 13
