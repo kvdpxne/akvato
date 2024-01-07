@@ -1,27 +1,27 @@
 {
-	"site": {
-		"description": ""
-	},
-	"home": {
-		"hero": {
-			"welcome": "Hi, I'm kvdpxne.",
-			"who": "Fullstack developer from Poland",
-			"description": "My name is Łukasz Pietrzak, I am a programming enthusiast specializing in creating web services. In my free time, I also like to create open-source software for various purposes, which you can find in the <0>repositories</0> tab on my <1>GitHub</1> profile."
-		},
-		"few_information": "A few information",
-		"few_projects": "A few projects",
-		"specializations": "Specializations",
-		"contacts": "Socials & Contact",
-		"contacts_information": "<0>Please avoid using these contact options for technical support.</0>The appropriate issue tracker for the software you need help with is best suited for it. Thank you in advance!",
-		"repositories": {
-			"site": "The repository contains open-source code for the portfolio page you are currently on with author information. A complete environment to showcase your skills, projects and contact.",
-			"covilo": "The repository is open-source code for a crime reporting web application. It provides a safe environment for users to report incidents and supports cooperation with law enforcement agencies.",
-			"destroy_the_monument": "Mini-game plugin repository for Minecraft. Competition between two teams, the aim of which is to destroy the opponent's monument. Open source code for dynamic Minecraft gameplay."
-		}
-	},
-	"just_now": "Just now \uD83D\uDC40",
-	"year": "year",
-	"years": "years",
-	"month": "month",
-	"months": "months"
+  "site": {
+    "description": ""
+  },
+  "home": {
+    "hero": {
+      "welcome": "Hi, I'm kvdpxne.",
+      "who": "Fullstack developer from Poland",
+      "description": "My name is Łukasz Pietrzak, I am a programming enthusiast specializing in creating web services. In my free time, I also like to create open-source software for various purposes, which you can find in the <0>repositories</0> tab on my <1>GitHub</1> profile."
+    },
+    "few_information": "A few information",
+    "few_projects": "A few projects",
+    "specializations": "Specializations",
+    "contacts": "Socials & Contact",
+    "contacts_information": "<0>Please avoid using these contact options for technical support.</0>The appropriate issue tracker for the software you need help with is best suited for it. Thank you in advance!",
+    "repositories": {
+      "site": "The repository contains open-source code for the portfolio page you are currently on with author information. A complete environment to showcase your skills, projects and contact.",
+      "covilo": "The repository is open-source code for a crime reporting web application. It provides a safe environment for users to report incidents and supports cooperation with law enforcement agencies.",
+      "destroy_the_monument": "Mini-game plugin repository for Minecraft. Competition between two teams, the aim of which is to destroy the opponent's monument. Open source code for dynamic Minecraft gameplay."
+    }
+  },
+  "just_now": "Just now \uD83D\uDC40",
+  "year": "year",
+  "years": "years",
+  "month": "month",
+  "months": "months"
 }

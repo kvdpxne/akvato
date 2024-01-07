@@ -15,54 +15,54 @@ changeLanguage("en");
 ---
 
 <Layout>
-	<div class="flex justify-center">
-		<div class="container space-y-5">
-			<div class="flex items-center pt-16 pb-32">
-				<Hero/>
-			</div>
-			<Title>
-				{t("home.few_information")}
-			</Title>
-			<Grid>
-				<Container slot="first"
-									 title={t("home.specializations")}
-									 items={specializations}/>
-				<Fragment slot="second">
-					<Container title={t("home.contacts")}
-										 items={contacts}/>
-					<div class="ps-2 pe-2">
-						<Trans i18nKey="home.contacts_information">
-							<p class="font-bold">
-								Please avoid using these contact options for technical support.
-							</p>
-							The appropriate issue tracker for the software you need help
-							with is best suited for it. Thank you in advance!
-						</Trans>
-					</div>
-				</Fragment>
-			</Grid>
-			<Title id="projects">
-				{t("home.few_projects")}
-			</Title>
-			<Grid>
-				<Fragment slot="first">
-					<Repository name="kvdpxne/covilo"
-											languages={[
-												{name: "Java", color: "#b07219"},
-												{name: "TypeScript", color: "#3178c6"}]}>
-						{t("home.repositories.covilo")}
-					</Repository>
-					<Repository name="kvdpxne/destroy-the-monument"
-											languages={[{name: "Kotlin", color: "#a97bff"}]}>
-						{t("home.repositories.destroy_the_monument")}
-					</Repository>
-				</Fragment>
-				<Repository slot="second"
-										name={`kvdpxne/${name}`}
-										languages={[{name: "Astro", color: "#ff5a03"}]}>
-					{t("home.repositories.site")}
-				</Repository>
-			</Grid>
-		</div>
-	</div>
+  <div class="flex justify-center">
+    <div class="container space-y-5">
+      <div class="flex items-center pt-16 pb-32">
+        <Hero/>
+      </div>
+      <Title>
+        {t("home.few_information")}
+      </Title>
+      <Grid>
+        <Container slot="first"
+                   title={t("home.specializations")}
+                   items={specializations}/>
+        <Fragment slot="second">
+          <Container title={t("home.contacts")}
+                     items={contacts}/>
+          <div class="ps-2 pe-2">
+            <Trans i18nKey="home.contacts_information">
+              <p class="font-bold">
+                Please avoid using these contact options for technical support.
+              </p>
+              The appropriate issue tracker for the software you need help
+              with is best suited for it. Thank you in advance!
+            </Trans>
+          </div>
+        </Fragment>
+      </Grid>
+      <Title id="projects">
+        {t("home.few_projects")}
+      </Title>
+      <Grid>
+        <Fragment slot="first">
+          <Repository name="kvdpxne/covilo"
+                      languages={[
+                        {name: "Java", color: "#b07219"},
+                        {name: "TypeScript", color: "#3178c6"}]}>
+            {t("home.repositories.covilo")}
+          </Repository>
+          <Repository name="kvdpxne/destroy-the-monument"
+                      languages={[{name: "Kotlin", color: "#a97bff"}]}>
+            {t("home.repositories.destroy_the_monument")}
+          </Repository>
+        </Fragment>
+        <Repository slot="second"
+                    name={`kvdpxne/${name}`}
+                    languages={[{name: "Astro", color: "#ff5a03"}]}>
+          {t("home.repositories.site")}
+        </Repository>
+      </Grid>
+    </div>
+  </div>
 </Layout>

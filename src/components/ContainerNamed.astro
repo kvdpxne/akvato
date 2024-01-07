@@ -5,13 +5,13 @@ const {title, items} = Astro.props;
 ---
 
 <Container>
-	<div class="p-5">
-		<h2 class="font-bold">
-			{title}
-		</h2>
-		<div class="mt-6 space-y-2">
-			{items.sort((a, b) => b.value - a.value).map(it =>
-				<Item content={it}/>)}
-		</div>
-	</div>
+  <div class="p-5">
+    <h2 class="font-bold">
+      {title}
+    </h2>
+    <div class="mt-6 space-y-2">
+      {items.sort((a, b) => b.value - a.value).map(it =>
+        <Item content={it}/>)}
+    </div>
+  </div>
 </Container>

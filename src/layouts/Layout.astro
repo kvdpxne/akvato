@@ -5,25 +5,25 @@ import i18next from "i18next";
 ---
 
 <html lang={i18next.language} dir="ltr">
-	<!--suppress HtmlRequiredTitleElement-->
-	<head>
-		<BaseHead/>
-		<script is:inline>
-			const language = navigator.language;
-			if (!location.href.includes("/pl/") && "pl" === language) {
-				location.href = `${location.href}pl`
-			}
-			if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-				document.documentElement.classList.add("dark");
-			} else {
-				document.documentElement.classList.remove("dark");
-			}
-		</script>
-	</head>
-	<body class="p-4 md:p-10 space-y-10
+  <!--suppress HtmlRequiredTitleElement-->
+  <head>
+    <BaseHead/>
+    <script is:inline>
+      const language = navigator.language;
+      if (!location.href.includes("/pl") && "pl" === language) {
+        location.href = `${location.href}pl`;
+      }
+      if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+        document.documentElement.classList.add("dark");
+      } else {
+        document.documentElement.classList.remove("dark");
+      }
+    </script>
+  </head>
+  <body class="p-4 md:p-10 space-y-10
 							 bg-neutral-100 dark:bg-neutral-800
 							 text-neutral-800 dark:text-neutral-100">
-		<slot/>
-		<Footer/>
-	</body>
+    <slot/>
+    <Footer/>
+  </body>
 </html>

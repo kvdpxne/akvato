@@ -7,56 +7,56 @@ const {content} = Astro.props;
  * For example, 13 months will be 1 year and 1 month.
  */
 const converted = () => {
-	const value = content.value;
-	if ("string" === typeof value) {
-		return value;
-	}
-	if (0 >= value) {
-		return t("just_now");
-	}
-	/* Jest to dość prymitywne podejście, ale w chwili kiedy to pisałem nie
-	 * brałem pod uwagę wspierania więcej niż 2 języków w tym projekcie;
-	 * angielskiego i swojego ojczystego, czyli polskiego.
-	 */
-	const isPolish = "pl" === i18next.language;
-	const years = Math.floor(value / 12);
-	const leftMonths = value % 12;
-	let result = "";
-	if (0 < years) {
-		result += 1 === years
-			? `1 ${t("year")}`
-			: `${years} ${t("years")}`;
-		/* 1 rok
-		 * 2 lata
-		 * 3 lata
-		 * 4 lata
-		 * 5 lat
-		 * ...
-		 */
-		if (isPolish && 4 < years) {
-			result = result.slice(0, -1);
-		}
-	}
-	if (0 < years && 0 < leftMonths) {
-		result += " ";
-	}
-	if (0 < leftMonths) {
-		result += 1 === leftMonths
-			? `1 ${t("month")}`
-			: `${leftMonths} ${t("months")}`;
-		/* 1 miesiąc
-		 * 2 miesiące
-		 * 3 miesiące
-		 * 4 miesiące
-		 * 5 miesięcy
-		 * ...
-		 */
-		if (isPolish && 4 < leftMonths) {
-			result = result.slice(0, -1);
-			result += "y";
-		}
-	}
-	return result;
+  const value = content.value;
+  if ("string" === typeof value) {
+    return value;
+  }
+  if (0 >= value) {
+    return t("just_now");
+  }
+  /* Jest to dość prymitywne podejście, ale w chwili kiedy to pisałem nie
+   * brałem pod uwagę wspierania więcej niż 2 języków w tym projekcie;
+   * angielskiego i swojego ojczystego, czyli polskiego.
+   */
+  const isPolish = "pl" === i18next.language;
+  const years = Math.floor(value / 12);
+  const leftMonths = value % 12;
+  let result = "";
+  if (0 < years) {
+    result += 1 === years
+      ? `1 ${t("year")}`
+      : `${years} ${t("years")}`;
+    /* 1 rok
+     * 2 lata
+     * 3 lata
+     * 4 lata
+     * 5 lat
+     * ...
+     */
+    if (isPolish && 4 < years) {
+      result = result.slice(0, -1);
+    }
+  }
+  if (0 < years && 0 < leftMonths) {
+    result += " ";
+  }
+  if (0 < leftMonths) {
+    result += 1 === leftMonths
+      ? `1 ${t("month")}`
+      : `${leftMonths} ${t("months")}`;
+    /* 1 miesiąc
+     * 2 miesiące
+     * 3 miesiące
+     * 4 miesiące
+     * 5 miesięcy
+     * ...
+     */
+    if (isPolish && 4 < leftMonths) {
+      result = result.slice(0, -1);
+      result += "y";
+    }
+  }
+  return result;
 };
 ---
 
@@ -64,22 +64,22 @@ const converted = () => {
           rounded-lg p-2
           group
           hover:bg-neutral-200 hover:dark:bg-neutral-700"
-	 href={content.reference}
-	 target={content.reference?.startsWith("mailto:") ? "_self" : "_blank"}>
-	<div class="flex items-center
+   href={content.reference}
+   target={content.reference?.startsWith("mailto:") ? "_self" : "_blank"}>
+  <div class="flex items-center
               text-neutral-700 dark:text-neutral-200">
-		<div class="rounded-full mr-2 p-2
+    <div class="rounded-full mr-2 p-2
                 bg-neutral-200 dark:bg-neutral-700
                 group-hover:bg-neutral-300 dark:group-hover:bg-neutral-600">
-			<img class="h-8 w-8"
-					 src={`/_icons/${content.icon}.svg`}
-					 alt={content.name}>
-		</div>
-		<span class="text-sm font-medium">
+      <img class="h-8 w-8"
+           src={`/_icons/${content.icon}.svg`}
+           alt={content.name}>
+    </div>
+    <span class="text-sm font-medium">
       {content.name}
     </span>
-	</div>
-	<span class="text-sm text-neutral-600 dark:text-neutral-400">
+  </div>
+  <span class="text-sm text-neutral-600 dark:text-neutral-400">
     {converted()}
   </span>
 </a>
