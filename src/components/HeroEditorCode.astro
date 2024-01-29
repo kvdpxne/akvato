@@ -1,0 +1,35 @@
+---
+import {getHighlighter} from "shikiji";
+import * as fs from "fs";
+
+const language = JSON.parse(fs.readFileSync("public/_themes/javascript.json", "utf-8"));
+const theme = JSON.parse(fs.readFileSync("public/_themes/dark.json", "utf-8"));
+const theme2 = JSON.parse(fs.readFileSync("public/_themes/light.json", "utf-8"));
+
+const highlighter = await getHighlighter();
+
+await highlighter.loadLanguage(language);
+await highlighter.loadTheme(theme, theme2);
+
+const code = `console.log("test");'`;
+const html = highlighter.codeToHtml(code, {
+  lang: "javascript",
+  themes: {
+    dark: "dark",
+    light: "light"
+  }
+});
+---
+
+<style is:global>
+  /* noinspection CssUnresolvedCustomProperty */
+  @media (prefers-color-scheme: dark) {
+    .shiki, .shiki span {
+      background-color: var(--shiki-dark-bg) !important;
+      color: var(--shiki-dark) !important;
+    }
+  }
+</style>
+
+<Fragment set:html={html}/>
+
