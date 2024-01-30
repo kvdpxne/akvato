@@ -1,0 +1,13 @@
+---
+import HeroEditorCode from "./EditorCode.astro";
+import EditorTab from "./EditorTab.astro";
+---
+
+<div class="rounded-tl-2xl bg-neutral-100 dark:bg-neutral-900 flex">
+  <EditorTab name="donut.js" isActive={true}/>
+  <EditorTab name="index.html"/>
+</div>
+<div
+  class="bg-white dark:bg-neutral-800 h-96 overflow-y-auto ps-3 pe-1 pt-3 pb-1">
+  <HeroEditorCode/>
+</div>
