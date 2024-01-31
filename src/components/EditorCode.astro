@@ -11,9 +11,31 @@ const highlighter = await getHighlighter();
 await highlighter.loadLanguage(language);
 await highlighter.loadTheme(theme, theme2);
 
-const code = `console.log("test");'`;
+const code = `package me.kvdpxne.application;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+/**
+ * Main entry point for the Application.
+ * It initializes and runs the Spring Boot application.
+ */
+@SpringBootApplication
+public class Application {
+
+  /**
+   * Main method to start the Application.
+   *
+   * @param arguments Command-line arguments passed to the application.
+   */
+  public static void main(final String[] arguments) {
+    // Run the Spring Boot application by invoking SpringApplication.run()
+    // with the Application class and command-line arguments.
+    SpringApplication.run(Application.class, arguments);
+  }
+}`;
 const html = highlighter.codeToHtml(code, {
-  lang: "javascript",
+  lang: "java",
   themes: {
     dark: "dark",
     light: "light"
@@ -31,5 +53,21 @@ const html = highlighter.codeToHtml(code, {
   }
 </style>
 
-<Fragment set:html={html}/>
+<style>
+  .container {
+    @apply bg-white;
+    @apply dark:bg-neutral-800;
+    @apply h-96;
+    @apply overflow-y-auto;
+    @apply ps-3;
+    @apply pe-1;
+    @apply pt-3;
+    @apply pb-1;
+  }
+</style>
+
+<div class="container">
+  <Fragment set:html={html}/>
+</div>
+
 

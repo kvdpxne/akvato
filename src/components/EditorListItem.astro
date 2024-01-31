@@ -1,0 +1,28 @@
+---
+const {
+  name,
+  isActive = false
+} = Astro.props;
+---
+
+<style>
+  .tab {
+    @apply p-3;
+    @apply dark:bg-neutral-800;
+    @apply cursor-pointer;
+  }
+
+  .tab-active {
+    @apply border-b;
+    @apply border-blue-700;
+
+    @apply text-blue-500;
+
+    @apply dark:border-red-700;
+    @apply dark:text-red-500;
+  }
+</style>
+
+<div class={isActive ? "tab tab-active" : "tab"}>
+  {name}
+</div>
